@@ -11,7 +11,7 @@ class UsedFeature extends Model
 
     protected $fillable = [
         'feature_id',
-        'used_id',
+        'user_id',
         'credits'
         ];
 

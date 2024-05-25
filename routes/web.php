@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/feature1', [Feature1Controller::class,'index'])->name('feature1.index');
     Route::get('/feature2', [Feature2Controller::class,'index'])->name('feature2.index');
+    Route::post('/feature1/calculate', [Feature1Controller::class,'calculate'])->name('feature1.calculate');
 
 
 });

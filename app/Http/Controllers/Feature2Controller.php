@@ -12,7 +12,7 @@ class Feature2Controller extends Controller
     public $feature = null;
     public function __construct()
     {
-        $this->feature =  Feature::where("route_name","feature1.index")
+        $this->feature =  Feature::where("route_name","feature2.index")
         ->where("active",true)
         ->firstOrFail();
     }
