@@ -53,7 +53,7 @@ export default function Feature({ feature, answer, children }) {
                                     <div>
                                         You don't have enough credits for this feature.
                                         Go(" ")
-                                        <Link href="/" className="underline">
+                                        <Link href={route('credit.index')} className="underline">
                                             Buy more credits
                                         </Link>
                                     </div>

@@ -19,7 +19,7 @@ class CreditController extends Controller
     {
         $packages = Package::all();
         $features = Feature::where('active',true)->get();
-        return inertia("Credit/Index",[
+        return inertia("Credits/Index",[
             'packages'=>PackageResource::collection($packages),
             'features'=>FeatureResource::collection($features),
             'success'=>session('success'),
