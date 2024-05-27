@@ -34,15 +34,15 @@ class CreditController extends Controller
 
        $checkout_session = $stripe->checkout->sessions->create([
         'line_items'=>[
-            'price_data'=> [
+            ['price_data'=> [
                 'currency'=>'usd',
                 'product_data'=>[
-                    $package->name . '-' . $package->credits
+                   'name' => $package->name . '-' . $package->credits
                 . $package->credits . ' credits'
                 ],
                 'unit_amount' => $package->price * 100,
             ],
-            'quantity'=>1,
+            'quantity'=>1]
         ],
         'mode'=>'payment',
         'success_url'=>route('credit.success',[],true),
