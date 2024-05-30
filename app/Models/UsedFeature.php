@@ -12,24 +12,25 @@ class UsedFeature extends Model
     protected $fillable = [
         'feature_id',
         'user_id',
-        'credits'
+        'credits',
+        'data'
+    ];
+
+
+    protected function casts(): array
+    {
+        return [
+            'data' => 'array'
         ];
+    }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-        protected function casts(): array
-        {
-            return [
-                'data'=> 'array'
-                ];
-        }
-
-        public function user()
-        {
-            return $this->belongsTo(User::class);
-        }
-
-        public function features()
-        {
-            return $this->belongsTo(Feature::class);
-        }
+    public function feature()
+    {
+        return $this->belongsTo(Feature::class);
+    }
 }
